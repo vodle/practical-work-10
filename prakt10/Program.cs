@@ -14,6 +14,7 @@ namespace prakt10
             strt:
             Console.Clear();
             int log;
+            int reg;
             int ch = auth.start_auth();
             switch (ch)
             {
@@ -32,7 +33,9 @@ namespace prakt10
                     }
                     break;
                 case 2:
-                    break;
+                    reg = register.start_register_screen();
+                    ch = 1;
+                    goto strt;
             }
             
         }

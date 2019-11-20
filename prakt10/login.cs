@@ -35,14 +35,14 @@ namespace prakt10
                     if(login == "root" && pass == "toor")
                     {
                         res = 3;
-                    }else
+                        break;
+                    }
+                    else
                     {
                         res = 1;
+                       
+                        
                     }
-                }
-                else
-                {
-                    res = 0;
                 }
             }
             sr.Close();
