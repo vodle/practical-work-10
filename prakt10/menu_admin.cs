@@ -10,8 +10,8 @@ namespace prakt10
     class menu_admin
     {
        
-        static string[] punkt = new string[] {"создать", "удалить", "ВЫХОД"};
-        public static void start_menu()
+        static string[] punkt = new string[] {"создать","изменит", "удалить", "ВЫХОД"};
+        public static void start_admin_menu()
         {
 
         strt:
@@ -26,30 +26,46 @@ namespace prakt10
                         Console.Clear();
                         Console.WriteLine("введите имя файла\n");
                         string name = Console.ReadLine();
-                        File.Create("C:\\prakt10\\" + name + ".txt");
+                        File.Create("..\\..\\..\\info\\" + name + ".txt");
                         goto strt;
                     }
                 case 1:
                     {
+                        
                         Console.Clear();
                         Console.WriteLine("введите имя файла\n");
                         string name = Console.ReadLine();
-                        File.Delete("C:\\prakt10\\" + name + ".txt");
+                        StreamWriter sw = new StreamWriter("..\\..\\..\\info\\" + name + ".txt", true);
+                        Console.Clear();
+                        Console.WriteLine("введите текст, который будет добавлен\n");
+                        string text = Console.ReadLine();
+                        sw.WriteLine(text);
+                        sw.Close();
+
                         goto strt;
                     } 
                 case 2:
                     {
+                        Console.Clear();
+                        Console.WriteLine("введите имя файла\n");
+                        string name = Console.ReadLine();
+                        File.Delete("..\\..\\..\\info\\" + name + ".txt");
 
                         goto strt;
                     }
-                
+                case 3:
+                    {
+
+                        break;
+                    }
+
             }
             
         }
         static void drow(string[] name, int sw)
         {
             Console.Clear();
-            for (int i = 0; i <= 2; i++)
+            for (int i = 0; i < name.Length; i++)
             {
                 
                 if(i != sw)
@@ -98,10 +114,10 @@ namespace prakt10
                 if (num < 0)
                 {
                    // Console.Clear();
-                    num = 3;
-                    drow(punkt, 3);
+                    num = 4;
+                    drow(punkt, 4);
                 }
-                if (num > 3)
+                if (num > 4)
                 {
                    // Console.Clear();
                     num = 0;

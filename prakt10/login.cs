@@ -45,7 +45,7 @@ namespace prakt10
                     res = 0;
                 }
             }
-
+            sr.Close();
 
             return res;
         }
