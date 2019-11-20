@@ -24,6 +24,7 @@ namespace prakt10
                         case 0:
                             goto strt;
                         case 1:
+                            menu_user.start_user_menu();
                             break;
                         case 3:
                             menu_admin.start_admin_menu();
