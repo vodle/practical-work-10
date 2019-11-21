@@ -22,10 +22,31 @@ namespace prakt10
         }
         static int tryreg(string login, string pass)
         {
-            StreamWriter sw = new StreamWriter("..\\..\\..\\info\\users.txt", true);
-            sw.WriteLine(login + ";" + pass + "\n");
-            int res = 1;
-            sw.Close();
+
+            int count = 0, res = 0;
+            string[] strings = File.ReadAllLines("..\\..\\..\\info\\users.txt");
+            for (int i = 0; i < strings.Length; i++)
+            {
+                if(strings[i] == (login + ";" + pass))
+                {
+                    count++;
+                    break;
+                }
+            }
+            if (count == 0)
+            {
+                StreamWriter sw = new StreamWriter("..\\..\\..\\info\\users.txt", true);
+                sw.WriteLine(login + ";" + pass + "\n");
+                res = 1;
+                sw.Close();
+
+            }
+            else
+            {
+                Console.Clear();
+                Console.Write("пользователь с именем " + login + " уже есть\n нажмите enter");
+                Console.ReadKey();
+            }
 
 
             return res;
