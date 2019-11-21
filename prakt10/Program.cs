@@ -18,7 +18,7 @@ namespace prakt10
             int ch = auth.start_auth();
             switch (ch)
             {
-                case 1:
+                case 0:
                     log = login.start_login_screen();
                     switch (log)
                     {
@@ -32,10 +32,12 @@ namespace prakt10
                             break;
                     }
                     break;
-                case 2:
+                case 1:
                     reg = register.start_register_screen();
                     ch = 1;
                     goto strt;
+                case 2:
+                    break;
             }
             
         }
