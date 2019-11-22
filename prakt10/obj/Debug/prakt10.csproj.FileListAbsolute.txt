@@ -12,3 +12,10 @@ C:\Users\vodle\source\repos\pract10\prakt10\obj\Debug\prakt10.csprojAssemblyRefe
 C:\Users\vodle\source\repos\pract10\prakt10\obj\Debug\prakt10.csproj.CoreCompileInputs.cache
 C:\Users\vodle\source\repos\pract10\prakt10\obj\Debug\prakt10.exe
 C:\Users\vodle\source\repos\pract10\prakt10\obj\Debug\prakt10.pdb
+C:\Users\vodle\source\repos\practic10\prakt10\bin\Debug\prakt10.exe.config
+C:\Users\vodle\source\repos\practic10\prakt10\bin\Debug\prakt10.exe
+C:\Users\vodle\source\repos\practic10\prakt10\bin\Debug\prakt10.pdb
+C:\Users\vodle\source\repos\practic10\prakt10\obj\Debug\prakt10.csprojAssemblyReference.cache
+C:\Users\vodle\source\repos\practic10\prakt10\obj\Debug\prakt10.csproj.CoreCompileInputs.cache
+C:\Users\vodle\source\repos\practic10\prakt10\obj\Debug\prakt10.exe
+C:\Users\vodle\source\repos\practic10\prakt10\obj\Debug\prakt10.pdb

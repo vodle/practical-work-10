@@ -10,7 +10,7 @@ namespace prakt10
     class menu_admin
     {
        
-        static string[] punkt = new string[] {"создать","изменит", "удалить", "ВЫХОД"};
+        static string[] punkt = new string[] {"создать","изменит","просмотреть", "удалить", "ВЫХОД"};
         public static void start_admin_menu()
         {
 
@@ -43,8 +43,22 @@ namespace prakt10
                         sw.Close();
 
                         goto strt;
-                    } 
+                    }
                 case 2:
+                    Console.Clear();
+                    Console.WriteLine("enter file name\n");
+                    string file_name = Console.ReadLine();
+                    string[] strings = File.ReadAllLines("..\\..\\..\\info\\" + file_name + ".txt");
+                    Console.Clear();
+                    for (int i = 0; i < strings.Length; i++)
+                    {
+                        Console.WriteLine(strings[i]);
+                    }
+                    Console.WriteLine("\n\nenter enter");
+                    Console.ReadKey();
+                    goto strt;
+
+                case 3:
                     {
                         Console.Clear();
                         Console.WriteLine("введите имя файла\n");
@@ -53,7 +67,7 @@ namespace prakt10
 
                         goto strt;
                     }
-                case 3:
+                case 4:
                     {
 
                         break;
