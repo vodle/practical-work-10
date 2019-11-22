@@ -24,7 +24,29 @@ namespace prakt10
                     {
                         case 0:
                             goto strt;
-                        case 1:
+                        case 10:
+                            Console.WriteLine("вы вошли как кассир");
+                            Console.ReadKey();
+                            menu_user.start_user_menu();
+                            break;
+                        case 11:
+                            Console.WriteLine("вы вошли как складмен");
+                            Console.ReadKey();
+                            menu_user.start_user_menu();
+                            break;
+                        case 12:
+                            Console.WriteLine("вы вошли как кадровик");
+                            Console.ReadKey();
+                            menu_user.start_user_menu();
+                            break;
+                        case 13:
+                            Console.WriteLine("вы вошли как бухгалтер");
+                            Console.ReadKey();
+                            menu_user.start_user_menu();
+                            break;
+                        case 14:
+                            Console.WriteLine("вы вошли как пользователь");
+                            Console.ReadKey();
                             menu_user.start_user_menu();
                             break;
                         case 3:

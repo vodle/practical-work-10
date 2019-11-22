@@ -1,6 +1,4 @@
 root;toor
-123;123
-foo;boo
-fo;bo
-login;password
+
+kass;kass;0
 

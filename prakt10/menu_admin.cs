@@ -117,7 +117,7 @@ namespace prakt10
                 }
                 if (keyPushed.Key == ConsoleKey.UpArrow)
                 {
-                    //Console.Clear();
+                    
                     num--;
                     drow(punkt, num);
                 }
@@ -127,13 +127,13 @@ namespace prakt10
                 }
                 if (num < 0)
                 {
-                   // Console.Clear();
+                   
                     num = 4;
                     drow(punkt, 4);
                 }
                 if (num > 4)
                 {
-                   // Console.Clear();
+                   
                     num = 0;
                     drow(punkt, 0);
                     Console.ResetColor();

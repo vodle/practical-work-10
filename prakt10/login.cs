@@ -37,11 +37,28 @@ namespace prakt10
                         res = 3;
                         break;
                     }
-                    else
+                    else if (splitedlines[2] == "0")
                     {
-                        res = 1;
-                       
-                        
+                        //кассир
+                        res = 10;
+                    }
+                    else if (splitedlines[2] == "1")
+                    {
+                        //складмен
+                        res = 11;
+                    }
+                    else if (splitedlines[2] == "2")
+                    {
+                        //кадровик
+                        res = 12;
+                    }
+                    else if (splitedlines[2] == "3")
+                    {
+                        //бухгалтер
+                        res = 13;
+                    }else
+                    {
+                        res = 14;
                     }
                 }
             }
