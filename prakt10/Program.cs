@@ -27,12 +27,12 @@ namespace prakt10
                         case 10:
                             Console.WriteLine("вы вошли как кассир");
                             Console.ReadKey();
-                            menu_user.start_user_menu();
+                            menu_kassir.start_kassir_menu();
                             break;
                         case 11:
                             Console.WriteLine("вы вошли как складмен");
                             Console.ReadKey();
-                            menu_user.start_user_menu();
+                            menu_skladman.start_skladmen_menu();
                             break;
                         case 12:
                             Console.WriteLine("вы вошли как кадровик");
