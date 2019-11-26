@@ -46,6 +46,7 @@
     <Compile Include="login.cs" />
     <Compile Include="menu_admin.cs" />
     <Compile Include="auth.cs" />
+    <Compile Include="menu_kadrovik.cs" />
     <Compile Include="menu_kassir.cs" />
     <Compile Include="menu_skladman.cs" />
     <Compile Include="menu_user.cs" />

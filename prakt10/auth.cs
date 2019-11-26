@@ -8,7 +8,7 @@ namespace prakt10
 {
     class auth
     {
-        static string[] punkt = new string[] { "вход", "регистрация","ВЫХОД" };
+        static string[] punkt = new string[] { "вход","ВЫХОД" };
         public static int start_auth()
         {
             int resp;
@@ -66,10 +66,10 @@ namespace prakt10
                 if (numa < 0)
                 {
                     // Console.Clear();
-                    numa = 2;
-                    drow(punkt, 2);
+                    numa = 1;
+                    drow(punkt, 1);
                 }
-                if (numa > 2)
+                if (numa > 1)
                 {
                     // Console.Clear();
                     numa = 0;

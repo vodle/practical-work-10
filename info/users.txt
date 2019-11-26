@@ -1,5 +1,5 @@
 root;toor
 kass;kass;0
 sklad;man;1
-user;user; 
-
+kadr;kadr;2
+user;user;

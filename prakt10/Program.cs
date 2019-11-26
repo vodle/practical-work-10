@@ -37,7 +37,7 @@ namespace prakt10
                         case 12:
                             Console.WriteLine("вы вошли как кадровик");
                             Console.ReadKey();
-                            menu_user.start_user_menu();
+                            menu_kadrovik.start_kadrovik_menu();
                             break;
                         case 13:
                             Console.WriteLine("вы вошли как бухгалтер");
@@ -55,10 +55,6 @@ namespace prakt10
                     }
                     break;
                 case 1:
-                    reg = register.start_register_screen();
-                    ch = 1;
-                    goto strt;
-                case 2:
                     break;
             }
             
