@@ -9,7 +9,7 @@ namespace prakt10
 {
     class register
     {
-        static string[] punkt = new string[] { "кассир","складмен","кадровик","бухгалтер" };
+        static string[] punkt = new string[] { "кассир","складмен","кадровик","бухгалтер","пользователь" };
         public static int start_register_screen()
         {
             Console.Clear();
@@ -39,11 +39,19 @@ namespace prakt10
             }
             if (count == 0)
             {
-                StreamWriter sw = new StreamWriter("..\\..\\..\\info\\users.txt", true);
-                sw.WriteLine(login + ";" + pass + ";" + dolj + "\n");
-                res = 1;
-                sw.Close();
-
+                if (!(dolj == 4)) {
+                    StreamWriter sw = new StreamWriter("..\\..\\..\\info\\users.txt", true);
+                    sw.WriteLine(login + ";" + pass + ";" + dolj + ";0");
+                    res = 1;
+                    sw.Close();
+                }
+                else
+                {
+                    StreamWriter sw = new StreamWriter("..\\..\\..\\info\\users.txt", true);
+                    sw.WriteLine(login + ";" + pass + ";" + ";0");
+                    res = 1;
+                    sw.Close();
+                }
             }
             else
             {
@@ -107,10 +115,10 @@ namespace prakt10
                 if (num < 0)
                 {
 
-                    num = 3;
-                    drow(punkt, 3);
+                    num = 4;
+                    drow(punkt, 4);
                 }
-                if (num > 3)
+                if (num > 4)
                 {
 
                     num = 0;

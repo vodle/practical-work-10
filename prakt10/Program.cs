@@ -42,7 +42,7 @@ namespace prakt10
                         case 13:
                             Console.WriteLine("вы вошли как бухгалтер");
                             Console.ReadKey();
-                            menu_user.start_user_menu();
+                            menu_boh.start_buh_menu();
                             break;
                         case 14:
                             Console.WriteLine("вы вошли как пользователь");
