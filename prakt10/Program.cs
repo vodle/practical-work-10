@@ -14,7 +14,6 @@ namespace prakt10
             strt:
             Console.Clear();
             int log;
-            int reg;
             int ch = auth.start_auth();
             switch (ch)
             {
