@@ -17,10 +17,15 @@ namespace prakt10
             string pass;
             Console.WriteLine("enter login: ");
             login = Console.ReadLine();
-            Console.WriteLine("enter passeord: ");
+            Console.WriteLine("enter password: ");
             pass = Console.ReadLine();
-
-            int doljnost = keys();
+            Console.Clear();
+            foreach (string h in punkt)
+            {
+                Console.WriteLine(h);
+            }
+            arrow_menu am = new arrow_menu(punkt);
+            int doljnost = am.keyss();
 
             return tryreg(login, pass, doljnost);
         }
@@ -63,76 +68,7 @@ namespace prakt10
 
             return res;
         }
-        static void drow(string[] name, int sw)
-        {
-            Console.Clear();
-            for (int i = 0; i < name.Length; i++)
-            {
-
-                if (i != sw)
-                {
-
-                    Console.BackgroundColor = ConsoleColor.Black;
-                    Console.ForegroundColor = ConsoleColor.White;
-                    Console.WriteLine(name[i]);
-                    Console.BackgroundColor = ConsoleColor.Black;
-                    Console.ForegroundColor = ConsoleColor.White;
-
-                }
-                else if (i == sw)
-                {
-
-                    Console.BackgroundColor = ConsoleColor.White;
-                    Console.ForegroundColor = ConsoleColor.Black;
-                    Console.WriteLine(name[i]);
-                    Console.BackgroundColor = ConsoleColor.Black;
-                    Console.ForegroundColor = ConsoleColor.White;
-
-                }
-            }
-        }//drow
-
-        static int keys()
-        {
-            int num = 0;
-            bool flag = false;
-
-            do
-            {
-                ConsoleKeyInfo keyPushed = Console.ReadKey();
-                if (keyPushed.Key == ConsoleKey.DownArrow)
-                {
-
-                    num++;
-                    drow(punkt, num);
-                }
-                if (keyPushed.Key == ConsoleKey.UpArrow)
-                {
-
-                    num--;
-                    drow(punkt, num);
-                }
-                if (keyPushed.Key == ConsoleKey.Enter)
-                {
-                    flag = true;
-                }
-                if (num < 0)
-                {
-
-                    num = 4;
-                    drow(punkt, 4);
-                }
-                if (num > 4)
-                {
-
-                    num = 0;
-                    drow(punkt, 0);
-                    Console.ResetColor();
-                }
-            } while (!flag);
-            return num;
-
-        }//keys
+        
     } 
 }
 

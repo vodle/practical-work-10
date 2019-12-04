@@ -2,4 +2,4 @@ root;toor
 kass;kass;0;0
 kadr;kadr;2;200
 buh;buh;3;0
-hhh;hhh;0;0
+user;user;;

@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="arrow_menu.cs" />
     <Compile Include="login.cs" />
     <Compile Include="menu_admin.cs" />
     <Compile Include="auth.cs" />

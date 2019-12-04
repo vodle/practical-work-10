@@ -14,7 +14,12 @@ namespace prakt10
         {
         strt:
             Console.Clear();
-            int num = keyss();
+            foreach (string h in punkt)
+            {
+                Console.WriteLine(h);
+            }
+            arrow_menu am = new arrow_menu(punkt);
+            int num = am.keyss();
 
 
             switch (num)
@@ -53,74 +58,7 @@ namespace prakt10
                     break;
 
             }
-            void drow(string[] name, int sw)
-            {
-                Console.Clear();
-                for (int i = 0; i < name.Length; i++)
-                {
-
-                    if (i != sw)
-                    {
-                        Console.BackgroundColor = ConsoleColor.Black;
-                        Console.ForegroundColor = ConsoleColor.White;
-                        Console.WriteLine(name[i]);
-                        Console.BackgroundColor = ConsoleColor.Black;
-                        Console.ForegroundColor = ConsoleColor.White;
-
-                    }
-                    else if (i == sw)
-                    {
-
-                        Console.BackgroundColor = ConsoleColor.White;
-                        Console.ForegroundColor = ConsoleColor.Black;
-                        Console.WriteLine(name[i]);
-                        Console.BackgroundColor = ConsoleColor.Black;
-                        Console.ForegroundColor = ConsoleColor.White;
-
-                    }
-                }
-            }//drow
-            int keyss()
-            {
-                int numa = 0;
-                bool flag = false;
-
-                do
-                {
-                    ConsoleKeyInfo keyPushed = Console.ReadKey();
-                    if (keyPushed.Key == ConsoleKey.DownArrow)
-                    {
-
-                        numa++;
-                        drow(punkt, numa);
-                    }
-                    if (keyPushed.Key == ConsoleKey.UpArrow)
-                    {
-
-                        numa--;
-                        drow(punkt, numa);
-                    }
-                    if (keyPushed.Key == ConsoleKey.Enter)
-                    {
-                        flag = true;
-                    }
-                    if (numa < 0)
-                    {
-
-                        numa = 2;
-                        drow(punkt, 2);
-                    }
-                    if (numa > 2)
-                    {
-
-                        numa = 0;
-                        drow(punkt, 0);
-                        Console.ResetColor();
-                    }
-                } while (!flag);
-                return numa;
-
-            }//keys
+            
         }
     }
 }

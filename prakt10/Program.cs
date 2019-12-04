@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 
 namespace prakt10
@@ -25,27 +26,27 @@ namespace prakt10
                             goto strt;
                         case 10:
                             Console.WriteLine("вы вошли как кассир");
-                            Console.ReadKey();
+                            Thread.Sleep(1000);
                             menu_kassir.start_kassir_menu();
                             break;
                         case 11:
                             Console.WriteLine("вы вошли как складмен");
-                            Console.ReadKey();
+                            Thread.Sleep(1000);
                             menu_skladman.start_skladmen_menu();
                             break;
                         case 12:
                             Console.WriteLine("вы вошли как кадровик");
-                            Console.ReadKey();
+                            Thread.Sleep(1000);
                             menu_kadrovik.start_kadrovik_menu();
                             break;
                         case 13:
                             Console.WriteLine("вы вошли как бухгалтер");
-                            Console.ReadKey();
+                            Thread.Sleep(1000); ;
                             menu_boh.start_buh_menu();
                             break;
                         case 14:
                             Console.WriteLine("вы вошли как пользователь");
-                            Console.ReadKey();
+                            Thread.Sleep(1000);
                             menu_user.start_user_menu();
                             break;
                         case 3:
