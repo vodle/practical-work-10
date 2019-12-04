@@ -61,10 +61,11 @@ namespace prakt10
 
                     if (i != sw)
                     {
-
                         Console.BackgroundColor = ConsoleColor.Black;
                         Console.ForegroundColor = ConsoleColor.White;
                         Console.WriteLine(name[i]);
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.ForegroundColor = ConsoleColor.White;
 
                     }
                     else if (i == sw)
@@ -73,6 +74,8 @@ namespace prakt10
                         Console.BackgroundColor = ConsoleColor.White;
                         Console.ForegroundColor = ConsoleColor.Black;
                         Console.WriteLine(name[i]);
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.ForegroundColor = ConsoleColor.White;
 
                     }
                 }
