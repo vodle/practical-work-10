@@ -9,7 +9,7 @@ namespace prakt10
 {
     class menu_kadrovik
     {
-        static string[] punkt = new string[] { "просмотреть пользователей", "добавить пользователя", "ВЫХОД" };
+        static string[] punkt = new string[] { "просмотреть пользователей", "добавить пользователя","удалить пользователя", "ВЫХОД" };
         public static void start_kadrovik_menu()
         {
         strt:
@@ -35,6 +35,25 @@ namespace prakt10
                         goto strt;
                     }
                 case 2:
+                    {
+                        string[] users = File.ReadAllLines("..\\..\\..\\info\\users.txt");
+                        StreamWriter sw = new StreamWriter("..\\..\\..\\info\\users.txt");
+                        Console.Clear();
+                        Console.WriteLine("введите имя пользователя");
+                        string name = Console.ReadLine();
+                        for (int i = 0; i < users.Length; i++)
+                        {
+                            string[] del_name = users[i].Split(';');
+                            if (name != del_name[0])
+                            {
+                                sw.WriteLine(users[i]);
+                            }
+                        }
+
+                        sw.Close();
+                        goto strt;
+                    }
+                case 3:
                     break;
 
             }
@@ -89,10 +108,10 @@ namespace prakt10
                     if (numa < 0)
                     {
 
-                        numa = 2;
-                        drow(punkt, 2);
+                        numa = 3;
+                        drow(punkt, 3);
                     }
-                    if (numa > 2)
+                    if (numa > 3)
                     {
 
                         numa = 0;
