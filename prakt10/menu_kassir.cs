@@ -34,11 +34,11 @@ namespace prakt10
 
                         string[] strs = File.ReadAllLines("..\\..\\..\\info\\sklad.txt");
                         StreamWriter sw = new StreamWriter("..\\..\\..\\info\\sklad.txt");
-                        /*for (int i = 0; i < strs.Length; i++)
+                        for (int i = 0; i < strs.Length; i++)
                         {
                             string[] prodcou = strs[i].Split(';');
                             int prodcount = int.Parse(prodcou[1]);
-                            if(strs[i] != name)
+                            if(strs[i].Split(';')[0] != name)
                             {
                                 sw.WriteLine(strs[i]);
                             }else if (((strs[i].Split(';')[0]) == name) && (count != prodcount))
@@ -49,8 +49,7 @@ namespace prakt10
                             {
                                 Console.WriteLine("товар продан");
                             }
-                        }*/
-                        Console.WriteLine("функция врменно не работает");
+                        }
                         sw.Close();
                         goto strt;
                     }
