@@ -3,3 +3,4 @@ kass;kass;0;0
 kadr;kadr;2;200
 buh;buh;3;0
 user;user;;
+sklad;man;1;0

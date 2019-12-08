@@ -30,7 +30,9 @@ namespace prakt10
                         StreamWriter sw = new StreamWriter("..\\..\\..\\info\\sklad.txt", true);
                         Console.WriteLine("введите товар, который будет добавлен\n");
                         string text = Console.ReadLine();
-                        sw.WriteLine(text);
+                        Console.WriteLine("введите кол-во товара\n");
+                        string count = Console.ReadLine();
+                        sw.WriteLine(text + ";" + count);
                         sw.Close();
                         goto strt;
                     }
