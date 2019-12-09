@@ -54,23 +54,30 @@ namespace prakt10
                     }
                 case 1:
                     {
-                        
-                        Console.Clear();
-                        DirectoryInfo dir = new DirectoryInfo("..\\..\\..\\info\\");
-                        foreach (var item in dir.GetFiles())
+                        try
                         {
-                            Console.WriteLine(item.Name);
-                        }
-                        Console.WriteLine("введите имя файла\n");
-                        string name = Console.ReadLine();
-                        StreamWriter sw = new StreamWriter("..\\..\\..\\info\\" + name + ".txt", true);
-                        Console.Clear();
-                        Console.WriteLine("введите текст, который будет добавлен\n");
-                        string text = Console.ReadLine();
-                        sw.WriteLine(text);
-                        sw.Close();
+                            Console.Clear();
+                            DirectoryInfo dir = new DirectoryInfo("..\\..\\..\\info\\");
+                            foreach (var item in dir.GetFiles())
+                            {
+                                Console.WriteLine(item.Name);
+                            }
+                            Console.WriteLine("введите имя файла\n");
+                            string name = Console.ReadLine();
+                            StreamWriter sw = new StreamWriter("..\\..\\..\\info\\" + name + ".txt", true);
+                            Console.Clear();
+                            Console.WriteLine("введите текст, который будет добавлен\n");
+                            string text = Console.ReadLine();
+                            sw.WriteLine(text);
+                            sw.Close();
 
-                        goto strt;
+                            goto strt;
+                        }catch(Exception e)
+                        {
+                            Console.WriteLine("ошибка " + e.Message);
+                            Thread.Sleep(1000);
+                            goto strt;
+                        }
                     }
                 case 2:
                     Console.Clear();
@@ -119,17 +126,24 @@ namespace prakt10
                         }
                         Console.WriteLine("\nвведите имя пользователя");
                         string name = Console.ReadLine();
-                        for (int i = 0; i < users.Length; i++)
+                        if (name == "0")
                         {
-                            string[] del_name = users[i].Split(';');
-                            if (name != del_name[0])
-                            {
-                                sw.WriteLine(users[i]);
-                            }
+                            goto strt;
                         }
+                        else
+                        {
+                            for (int i = 0; i < users.Length; i++)
+                            {
+                                string[] del_name = users[i].Split(';');
+                                if (name != del_name[0])
+                                {
+                                    sw.WriteLine(users[i]);
+                                }
+                            }
 
-                        sw.Close();
-                        goto strt;
+                            sw.Close();
+                            goto strt;
+                        }
                     }
                 case 5:
                     break;
