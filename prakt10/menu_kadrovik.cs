@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Threading;
 
 namespace prakt10
 {
@@ -53,17 +54,26 @@ namespace prakt10
                         }
                         Console.WriteLine("\nвведите имя пользователя");
                         string name = Console.ReadLine();
-                        for (int i = 0; i < users.Length; i++)
+                        if (name == "0")
                         {
-                            string[] del_name = users[i].Split(';');
-                            if (name != del_name[0])
-                            {
-                                sw.WriteLine(users[i]);
-                            }
+                            goto strt;
                         }
-
-                        sw.Close();
-                        goto strt;
+                        else
+                        {
+                            for (int i = 0; i < users.Length; i++)
+                            {
+                                string[] del_name = users[i].Split(';');
+                                if (name != del_name[0])
+                                {
+                                    sw.WriteLine(users[i]);
+                                }
+                            }
+                            Console.Clear();
+                            Console.WriteLine("пользователь " + name + " удален!");
+                            Thread.Sleep(1000);
+                            sw.Close();
+                            goto strt;
+                        }
                     }
                 case 3:
                     break;

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Threading;
 
 namespace prakt10
 {
@@ -30,11 +31,21 @@ namespace prakt10
                         StreamWriter sw = new StreamWriter("..\\..\\..\\info\\sklad.txt", true);
                         Console.WriteLine("введите товар, который будет добавлен\n");
                         string text = Console.ReadLine();
-                        Console.WriteLine("введите кол-во товара\n");
-                        string count = Console.ReadLine();
-                        sw.WriteLine(text + ";" + count);
-                        sw.Close();
-                        goto strt;
+                        if (text == "0")
+                        {
+                            goto strt;
+                        }
+                        else
+                        {
+                            Console.WriteLine("введите кол-во товара\n");
+                            string count = Console.ReadLine();
+                            sw.WriteLine(text + ";" + count);
+                            Console.Clear();
+                            Console.WriteLine("товар добавлен!");
+                            Thread.Sleep(1000);
+                            sw.Close();
+                            goto strt;
+                        }
                     }
                 case 1:
                     {
