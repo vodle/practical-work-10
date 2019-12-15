@@ -10,7 +10,7 @@ namespace prakt10
 {
     class menu_kassir
     {
-        static string[] punkt = new string[] { "продать товар", "все товары", "ВЫХОД" };
+        static string[] punkt = new string[] { "продать товар", "все товары", "возврат", "ВЫХОД" };
         public static void start_kassir_menu()
         {
         strt:
@@ -90,8 +90,34 @@ namespace prakt10
                         goto strt;
                     }
                 case 2:
-                    break;
 
+                    Console.Clear();
+                    Console.WriteLine("введите принятый товар");
+                    string tovar = Console.ReadLine();
+                    if (tovar == "0")
+                    {
+                        goto strt;
+                    }
+                    else
+                    {
+                        string[] tovars = File.ReadAllLines("..\\..\\..\\info\\sklad.txt");
+                        StreamWriter sw = new StreamWriter("..\\..\\..\\info\\sklad.txt");
+                        Console.WriteLine("введите кол-во товара\n");
+                        string count = Console.ReadLine();
+                        for (int i = 0; i < tovars.Length; i++)
+                        {
+                            if (tovar != tovars[i].Split(';')[0])
+                            {
+                                sw.WriteLine(tovars[i]);
+                            }
+                            else
+                            {
+                                sw.WriteLine((tovars[i].Split(';')[0]) + Convert.ToInt32(tovars[i].Split(';')[1]) + 1);
+                            }
+                        }
+                        Console.Clear();
+                        goto strt;
+                    }
             }
             
         }
