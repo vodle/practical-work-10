@@ -15,7 +15,7 @@ namespace prakt10
             strt:
             Console.Clear();
             int log;
-            int ch = auth.start_auth();
+            int ch = loader.start_loader();
             switch (ch)
             {
                 case 0:
