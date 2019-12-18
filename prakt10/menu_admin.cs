@@ -11,7 +11,7 @@ namespace prakt10
     class menu_admin
     {
        
-        static string[] punkt = new string[] {"создать","изменит","просмотреть", "удалить", "удалить пользователя", "ВЫХОД"};
+        static string[] punkt = new string[] {"создать","изменит","просмотреть", "удалить", "удалить пользователя","добавить пользователя", "ВЫХОД"};
         public static void start_admin_menu()
         {
 
@@ -88,16 +88,25 @@ namespace prakt10
                     }
                     Console.Write("\n\n");
                     Console.WriteLine("введите имя файла");
-                    string file_name = Console.ReadLine();
-                    string[] strings = File.ReadAllLines("..\\..\\..\\info\\" + file_name + ".txt");
-                    Console.Clear();
-                    for (int i = 0; i < strings.Length; i++)
+                    try
                     {
-                        Console.WriteLine(strings[i]);
+                        string file_name = Console.ReadLine();
+                        string[] strings = File.ReadAllLines("..\\..\\..\\info\\" + file_name + ".txt");
+                        Console.Clear();
+                        for (int i = 0; i < strings.Length; i++)
+                        {
+                            Console.WriteLine(strings[i]);
+                        }
+                        Console.WriteLine("\n\nнажмите enter");
+                        Console.ReadKey();
+                        goto strt;
+                    }catch(Exception e)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("ошибка: " + e.Message);
+                        Thread.Sleep(1000);
+                        goto strt;
                     }
-                    Console.WriteLine("\n\nнажмите enter");
-                    Console.ReadKey();
-                    goto strt;
 
                 case 3:
                     {
@@ -110,9 +119,18 @@ namespace prakt10
                         Console.Write("\n\n");
                         Console.WriteLine("введите имя файла\n");
                         string name = Console.ReadLine();
-                        File.Delete("..\\..\\..\\info\\" + name + ".txt");
+                        try
+                        {
+                            File.Delete("..\\..\\..\\info\\" + name + ".txt");
 
-                        goto strt;
+                            goto strt;
+                        }catch(Exception e)
+                        {
+                            Console.Clear();
+                            Console.WriteLine("ошибка: " + e.Message);
+                            Thread.Sleep(1000);
+                            goto strt;
+                        }
                     }
                 case 4:
                     {
@@ -146,6 +164,9 @@ namespace prakt10
                         }
                     }
                 case 5:
+                    register.start_register_screen();
+                    goto strt;
+                case 6:
                     break;
 
             }

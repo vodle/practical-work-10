@@ -49,6 +49,7 @@ namespace prakt10
 
                                 string[] strs = File.ReadAllLines("..\\..\\..\\info\\sklad.txt");
                                 StreamWriter sw = new StreamWriter("..\\..\\..\\info\\sklad.txt");
+                                StreamWriter sww = new StreamWriter("..\\..\\..\\info\\bank.txt");
                                 for (int i = 0; i < strs.Length; i++)
                                 {
                                     string[] prodcou = strs[i].Split(';');
@@ -59,14 +60,19 @@ namespace prakt10
                                     }
                                     else if (((strs[i].Split(';')[0]) == name) && (count != prodcount))
                                     {
-                                        sw.WriteLine(strs[i].Split(';')[0] + ";" + (prodcount - count));
+                                        sw.WriteLine(strs[i].Split(';')[0] + ";" + (prodcount - count) + ";" + strs[i].Split(';')[2]);
+                                        sww.WriteLine(count * Convert.ToInt32(strs[i].Split(';')[2]));
                                     }
                                     else if ((strs[i] == name) && (count == prodcount))
                                     {
                                         Console.WriteLine("товар продан");
                                         Thread.Sleep(1000);
                                     }
+                                    
+
+
                                 }
+                                sww.Close();
                                 sw.Close();
                             }
                         }
@@ -86,6 +92,7 @@ namespace prakt10
                         {
                             Console.WriteLine(str[i]);
                         }
+                        
                         Console.ReadKey();
                         goto strt;
                     }
@@ -104,6 +111,8 @@ namespace prakt10
                         StreamWriter sw = new StreamWriter("..\\..\\..\\info\\sklad.txt");
                         Console.WriteLine("введите кол-во товара\n");
                         string count = Console.ReadLine();
+                        Console.WriteLine("введите цену товара\n");
+                        int price = int.Parse(Console.ReadLine());
                         for (int i = 0; i < tovars.Length; i++)
                         {
                             if (tovar != tovars[i].Split(';')[0])
@@ -112,9 +121,10 @@ namespace prakt10
                             }
                             else
                             {
-                                sw.WriteLine((tovars[i].Split(';')[0]) + Convert.ToInt32(tovars[i].Split(';')[1]) + 1);
+                                sw.WriteLine((tovars[i].Split(';')[0]) + ";" + Convert.ToInt32(tovars[i].Split(';')[1]) + count + ";" + price);
                             }
                         }
+                        sw.Close();
                         Console.Clear();
                         goto strt;
                     }

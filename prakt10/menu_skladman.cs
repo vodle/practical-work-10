@@ -39,7 +39,9 @@ namespace prakt10
                         {
                             Console.WriteLine("введите кол-во товара\n");
                             string count = Console.ReadLine();
-                            sw.WriteLine(text + ";" + count);
+                            Console.WriteLine("введите цену товара\n");
+                            int price = int.Parse(Console.ReadLine());
+                            sw.WriteLine(text + ";" + count + ";" + price);
                             Console.Clear();
                             Console.WriteLine("товар добавлен!");
                             Thread.Sleep(1000);
