@@ -9,7 +9,7 @@ namespace prakt10
 {
     class menu_boh
     {
-        static string[] punkt = new string[] { "просмотреть", "изменить", "ВЫХОД" };
+        static string[] punkt = new string[] { "просмотреть", "изменить", "выплатить зп", "ВЫХОД" };
         public static void start_buh_menu()
         {
         strt:
@@ -89,6 +89,25 @@ namespace prakt10
                         }
                     }
                 case 2:
+                    Console.Clear();
+                    string[] users = File.ReadAllLines("..\\..\\..\\info\\users.txt");
+                    string[] bank = File.ReadAllLines("..\\..\\..\\info\\bank.txt");
+                    StreamWriter writer = new StreamWriter("..\\..\\..\\info\\users.txt");
+                    int summ = int.Parse(bank[0]);
+                    int colvo = summ / users.Length - 1;
+                    for (int i = 0; i < users.Length; i++)
+                    {
+                        if(users[i].Split(';')[0] == "root")
+                        {
+                            writer.WriteLine(users[i]);
+                        }else
+                        {
+                            writer.WriteLine(users[i].Split(';')[0] + ";" + users[i].Split(';')[1] + ";" + users[i].Split(';')[2] + ";" + (int.Parse(users[i].Split(';')[3])) + (int)colvo) ;
+                        }
+                    }
+                    goto strt;
+
+                case 3:
                     break;
 
             }

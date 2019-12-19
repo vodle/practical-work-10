@@ -4,4 +4,4 @@ buh;buh;3;0
 user;user;;
 sklad;man;1;0
 root;toor
-~!@#$%^&*()_+;~!@#$%^&*()_+;1;0
+

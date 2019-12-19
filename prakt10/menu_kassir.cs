@@ -60,8 +60,8 @@ namespace prakt10
                                     }
                                     else if (((strs[i].Split(';')[0]) == name) && (count != prodcount))
                                     {
-                                        sw.WriteLine(strs[i].Split(';')[0] + ";" + (prodcount - count) + ";" + strs[i].Split(';')[2]);
-                                        sww.WriteLine(count * Convert.ToInt32(strs[i].Split(';')[2]));
+                                        sw.WriteLine(strs[i].Split(';')[0] + ";" + (Convert.ToInt32(prodcou[i].Split(';')[1]) - count) + ";" + strs[i].Split(';')[2]);
+                                        
                                     }
                                     else if ((strs[i] == name) && (count == prodcount))
                                     {
@@ -80,6 +80,8 @@ namespace prakt10
                         {
                             Console.WriteLine("ошибка: " + e.Message);
                             Thread.Sleep(1000);
+                            sww.Close();
+                            sw.Close();
                             goto strt;
                         }
                         goto strt;
@@ -128,6 +130,8 @@ namespace prakt10
                         Console.Clear();
                         goto strt;
                     }
+                case 3:
+                    break;
             }
             
         }
